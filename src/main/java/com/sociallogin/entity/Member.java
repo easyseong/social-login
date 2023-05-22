@@ -1,5 +1,6 @@
 package com.sociallogin.entity;
 
+import com.sociallogin.constant.Role;
 import com.sociallogin.dto.AddMember;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,9 +25,8 @@ public class Member {
 
     private String password;
 
-    //todo: EnumType(코어) 코드 추가
-//    @Enumerated(EnumType.STRING)
-//    private Role role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public static Member createMember(AddMember addMember, PasswordEncoder passwordEncoder) {
         Member member = new Member();
