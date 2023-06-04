@@ -5,7 +5,7 @@ security:
         naver:
           client-id: "UdgcXVojO1LT7djY4u9Z"
           client-secret: "ulMrvrzNKc"
-          redirect-uri: "http://localhost:8080/login/social/{registrationId}"
+          redirect-uri: "http://localhost:8080/login/social/naver"
           authorization-grant-type: authorization_code
           scope: name, email
           client-name: Naver

@@ -34,7 +34,7 @@ public class Member {
         member.setEmail(addMember.getEmail());
         String password = passwordEncoder.encode(addMember.getPassword());
         member.setPassword(password);
-//        member.setRole(Role.USER);
+        member.setRole(Role.USER);
         return member;
     }
 }

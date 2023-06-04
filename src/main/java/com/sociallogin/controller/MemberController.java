@@ -27,29 +27,29 @@ public class MemberController {
         return "member/memberForm";
     }
 
-    @PostMapping(value = "/new")
-    public String memberForm(AddMember addMember) {
-        Member member = Member.createMember(addMember, passwordEncoder);
-        memberService.addMember(member);
-        return "redirect:/";
-    }
-
-    @PostMapping("/new")
-    public String newMember(@Valid AddMember addMember, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            return "member/memberForm";
-        }
-
-        try {
-            Member member = Member.createMember(addMember, passwordEncoder);
-            memberService.addMember(member);
-        } catch (IllegalStateException e) {
-            model.addAttribute("errorMessage", e.getMessage());
-            return "member/memberForm";
-        }
-
-        return "redirect:/";
-    }
+//    @PostMapping(value = "/new")
+//    public String memberForm(AddMember addMember) {
+//        Member member = Member.createMember(addMember, passwordEncoder);
+//        memberService.addMember(member);
+//        return "redirect:/";
+//    }
+//
+//    @PostMapping("/new")
+//    public String newMember(@Valid AddMember addMember, BindingResult bindingResult, Model model) {
+//        if (bindingResult.hasErrors()) {
+//            return "member/memberForm";
+//        }
+//
+//        try {
+//            Member member = Member.createMember(addMember, passwordEncoder);
+//            memberService.addMember(member);
+//        } catch (IllegalStateException e) {
+//            model.addAttribute("errorMessage", e.getMessage());
+//            return "member/memberForm";
+//        }
+//
+//        return "redirect:/";
+//    }
 
     //todo: 리프레시, 액세스 토큰
     //    @PostMapping("/auth/refreshtoken")
